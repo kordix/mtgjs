@@ -1,0 +1,52 @@
+.card{
+    border:1px black solid;
+    border-radius: 5px;
+    width:100px;
+    height:130px;
+    text-align:center;
+    font-weight:bold;
+    margin:2px;
+}
+
+.karta p {
+    text-align:center;
+}
+
+p{
+    margin-bottom:0px;
+}
+
+
+.flexbox-container {
+    padding: 20px;
+    background: #eee;
+    display: flex;
+  }
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .flexbox-vert-item {
+    width: 300px;
+    background: #fefefe;
+    margin-right: 20px;
+    padding: 10px;
+  }
+  .flexbox-vert-item2 {
+    width: 300px;
+    background: #fefefe;
+    margin-right: 20px;
+    padding: 10px;
+    flex: 1;
+  }
+  .demo-wrapper {
+    min-height: 500px;
+  }
+
+  .pointer{
+    cursor:pointer;
+  }
+
+  .activecard{
+    background:yellow;
+  }

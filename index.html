@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container mt-2">
+
+        <!-- wróg -->
+        <div class="row mb-3" style="justify-content:center" name="player">
+            <div style="width: 100px; height: 100px; position: relative;">
+                <div style="border: 1px solid black; border-radius: 100%; width: 100px; height: 100px;"></div>
+                <div
+                    style="position: absolute; margin-left: 30px; background: red; bottom: -10px; border: 1px solid black; border-radius: 100%; width: 40px; height: 40px;">
+                    <span style="color: white; font-weight: bold; line-height: 40px;padding-left:9px"> 30 </span>
+                </div>
+                <div
+                    style="text-align:center;position: absolute; background: blue; left: 75px; bottom: 30px; border: 1px solid black; border-radius: 100%; width: 40px; height: 40px;">
+                    <span style="color: white; font-weight: bold; line-height: 40px;"> 0 </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- wrógstół -->
+        <div style="display:flex;justify-content:center;height:150px">
+            <div style="display:flex" id="enemytable">
+                
+            </div>
+        </div>
+
+        <!-- playerstół -->
+        <div style="display:flex;justify-content:center;height:150px" id="playertable" >
+         
+        </div>
+
+        <!-- ręka , player , talia -->
+        <div class="row mt-2" style="flex-wrap:nowrap">
+
+            <div class="col-4 col-lg-5 col-md-4" style="min-width:105px;display:flex;flex-wrap:wrap" id="playerhand">
+        
+            </div>
+
+            <div class="col-2 col-xs-4" style="min-width:150px">
+                <div style="width: 100px; height: 100px; position: relative;">
+                    <div style="border: 1px solid black; border-radius: 100%; width: 100px; height: 100px;"></div>
+                    <div
+                        style="position: absolute; margin-left: 30px; background: red; bottom: -10px; border: 1px solid black; border-radius: 100%; width: 40px; height: 40px;">
+                        <span style="color: white; font-weight: bold; line-height: 40px;padding-left:9px" id="playerlife"> 30 </span>
+                    </div>
+                    <div
+                        style="text-align:center;position: absolute; background: blue; left: 75px; bottom: 30px; border: 1px solid black; border-radius: 100%; width: 40px; height: 40px;">
+                        <span style="color: white; font-weight: bold; line-height: 40px;" id="playermana"> 1 </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-5 col-xs-3" >
+                <div class="card pointer" id="talia" onclick="takeCard()">
+                    <p><b>talia</b></p>
+                 
+                </div>
+            </div>
+        </div>
+        <br>
+        <div style="display:flex;justify-content:center">
+            <button id="endturnbutton" onclick="endturn()" style="opacity:0">Koniec tury</button>
+        </div>
+
+
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
