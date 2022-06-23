@@ -157,16 +157,16 @@ function generateCardsTable() {
 
         document.querySelector('#playertable').innerHTML +=
             `<div style="display:flex" id="cardtableplayer${i}" onclick="selectCardTable(${i})">
-            <div class="card pointer" style="display:flex;">
-                <p style="display:flex;justify-content: center;">${elem.name}</p>
-                <p style="height:150px"></p>
-                <div style="display:flex;height:auto;justify-content:space-between">
-                    <p style="flex-basis:50%;align-self:flex-start;text-align:left"><span style="color:green" class="elemlife">${elem.life}</span>
-                        <span style="color:red">${elem.damage}</span>
-                    </p>
-                <p style="color:blue">${elem.cost}</p>
-            </div>
-        </div>`;
+                <div class="card pointer ${elem.selected ? 'activecard' : ''}" style="display:flex;">
+                    <p style="display:flex;justify-content: center;">${elem.name}</p>
+                    <p style="height:150px"></p>
+                    <div style="display:flex;height:auto;justify-content:space-between">
+                        <p style="flex-basis:50%;align-self:flex-start;text-align:left"><span style="color:green" class="elemlife">${elem.life}</span>
+                            <span style="color:red">${elem.damage}</span>
+                        </p>
+                    <p style="color:blue">${elem.cost}</p>
+                </div>
+            </div>`;
 
     }
 }
@@ -197,22 +197,29 @@ generateCardsTableEnemy();
 
 
 function selectCardTable(i) {
-    if(document.querySelector('.activecard')){
-        document.querySelector('.activecard').classList.remove('activecard');
+    let elem = cardstableplayer[i];
+
+    if(!elem.selected){
+        elem.selected = true;
+    } else{
+        elem.selected = false;
     }
 
-    selectedcardtable = {};
-    if (Object.keys(selectedcardtable).length === 0) {
-        selectedcardtable = cardstableplayer[i];
-        selectedcardtable.indeks = i;
-    } else {
+    generateCardsTable();
+
+    // if(document.querySelector('.activecard')){
+    //     document.querySelector('.activecard').classList.remove('activecard');
+    // }
+
+    // if (Object.keys(selectedcardtable).length === 0) {
+    //     selectedcardtable = cardstableplayer[i];
+    //     selectedcardtable.indeks = i;
+    // } else {
         //selectedcardtable = {}
-    }
-    let element = '#cardtableplayer' + i;
+    // }
+    // let element = '#cardtableplayer' + i;
 
-    document.querySelector(element).getElementsByClassName('card')[0].classList.add('activecard');
-
-    console.log(selectedcardtable);
+    // document.querySelector(element).getElementsByClassName('card')[0].classList.add('activecard');
 
 }
 
@@ -235,8 +242,7 @@ function attack(i) {
     let element = '#cardtableenemy' + i;
 
  //   document.querySelector(element).getElementsByClassName('elemlife')[0].innerHTML = elem.life;
-
-  //  document.querySelector('#cardtableplayer0').getElementsByClassName('elemlife')[0].innerHTML = selectedcardtable.life;
+//  document.querySelector('#cardtableplayer0').getElementsByClassName('elemlife')[0].innerHTML = selectedcardtable.life;
 
     if (selectedcardtable.life <= 0) {
      //   document.querySelector('#cardtableplayer0').remove();
